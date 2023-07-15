@@ -1,0 +1,52 @@
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+body{
+
+  font-family: 'Open Sans';
+  color:#232;
+  margin:0px
+}
+a{
+
+  font-family: 'Open Sans';
+}
+p{
+  font-size: 1rem;
+  font-family: Felix;
+  line-height: 19px;
+  color: #828282;
+  font: inherit;
+}
+.image{
+  background-image: url(./assets/Components/HomePage/images/slider-new.jpeg);
+}
+.image2{
+  background-image: url(./assets/Components/HomePage/images/bg-connect.png);
+}
+.image1{
+  background-image: url(./assets/Components/HomePage/images/event_1.png);
+}
+.h1{
+  font-size: 40px;
+  line-height: 1;
+
+}
+.mag-up{
+  margin:0px;
+  margin-bottom:5px;
+}
+
+.c{
+  background:rgb(240, 252, 252);
+}
+
+.fixed-header{
+  position: fixed;
+  top:0px;
+  z-index:2
+}
