@@ -6,7 +6,7 @@ import twitter from '../HomePage/images/twitter.svg'
 import Logo from "../Header/Logo";
 import { styled } from "styled-components";
 const Footer =()=>{
-    return (
+    return ( 
 
         <>
         <UpcomingEvents>

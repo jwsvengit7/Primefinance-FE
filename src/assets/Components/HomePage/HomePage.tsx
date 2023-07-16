@@ -1,12 +1,11 @@
 import Footer from "../Footer/Footer";
 import Header from "../Header/Header";
 import Container from "./Container";
+import { navbar } from "./Contents";
 
 
 const HomePage = ()=>{
-    const navbar:string[] =[
-        "Home","About Us","Offer","Get Started"
-    ]
+
 
     return (
         <>

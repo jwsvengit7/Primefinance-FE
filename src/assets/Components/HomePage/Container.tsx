@@ -147,7 +147,7 @@ import { textfILL } from "./Contents";
                 <Para>
 
                 <h3>Be the best you</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio accusantium ducimus ea quos reiciendis veniam suscipit iure veritatis dolorem accusamus! Ipsa ipsam totam consectetur optio molestiae nemo architecto illum. Quaerat.</p>
+                <p>Industry Expertise: Training providers with industry experience possess in-depth knowledge and understanding of the specific finance and commercial practices relevant to your sector. They are familiar with the unique challenges, regulations, and best practices that shape the industry. Leveraging this expertise, the training programs they offer are tailored to address the specific needs and requirements of your organization within the industry context.</p>
                 </Para>
 
             </List>
@@ -157,7 +157,7 @@ import { textfILL } from "./Contents";
                 </IconList>
                 <Para>
                 <h3>Be the best you</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio accusantium ducimus ea quos reiciendis veniam suscipit iure veritatis dolorem accusamus! Ipsa ipsam totam consectetur optio molestiae nemo architecto illum. Quaerat.</p>
+                <p>Finance acumen refers to the understanding and application of financial principles and concepts within a business setting. Training programs focused on finance acumen can enhance the financial literacy of your team members, enabling them to make informed decisions related to budgeting, financial planning, cost management, and investment analysis. They will gain a deeper understanding of financial statements, key financial ratios, cash flow management, and other fundamental financial aspects.</p>
                 </Para>
 
             </List>
@@ -168,7 +168,7 @@ import { textfILL } from "./Contents";
                 <Para>
 
                 <h3>Be the best you</h3>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Distinctio accusantium ducimus ea quos reiciendis veniam suscipit iure veritatis dolorem accusamus! Ipsa ipsam totam consectetur optio molestiae nemo architecto illum. Quaerat.</p>
+                <p>Commercial acumen refers to the ability to understand and analyze business dynamics, market trends, customer needs, and competitive landscapes. Training programs that focus on commercial acumen can help your team members develop skills in strategic thinking, market analysis, customer segmentation, pricing strategies, and business development. They will gain insights into the broader business context, enabling them to make more effective decisions and contribute to the overall growth and profitability of your organization.</p>
                 </Para>
 
             </List>
@@ -176,6 +176,11 @@ import { textfILL } from "./Contents";
           
             </Award>
             
+        </MainContent>
+        <MainContent>
+            <Email>
+
+            </Email>
         </MainContent>
         <DivEnter>
             <h2>
@@ -240,4 +245,10 @@ const Scrol =styled.div`
 width:80%;
 height:400px;
 overflow:scroll
+`
+
+const Email = styled.div`
+width:100%;
+height:300px;
+background:red
 `
