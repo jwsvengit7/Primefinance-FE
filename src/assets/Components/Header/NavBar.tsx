@@ -7,7 +7,7 @@ const NavBar = (props:any)=>{
         <Link to="/">{props.items[0]}</Link>
         <Link to="/blog">{props.items[1]}</Link>
         <Link to="#offer">{props.items[2]}</Link>
-        <Link to="/signup" ><Button>{props.items[3]}</Button></Link>
+        <Link to="/login" ><Button>{props.items[3]}</Button></Link>
         </Nav>
         </>
     )

@@ -10,7 +10,7 @@ Tosin is a Fellow of Association of Chartered Certified Accountants (ACCA UK), a
 She is married and blessed with four wonderful children.
 `;
 const navbar:string[] =[
-    "Home","Our Blog","Offer","Get Started"
+    "Home","Our Blog","Offer","Login"
 ]
 
 const arr =[
