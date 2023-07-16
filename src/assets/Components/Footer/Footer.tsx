@@ -27,15 +27,7 @@ const Footer =()=>{
             <Link>08034456352,09080777734</Link>
             <Link>om.adebayo@yahoo.com</Link>
                 </LinkDiv>
-                <LinkDiv>
-                <Link style={{
-                fontSize:"20px"
-            }}>HOURS</Link>
-            <Link>Mailing Address:</Link>
-            <Link>PO Box 66668</Link>
-            <Link>Baltimore, Md. 21239-6668</Link>
-    
-                </LinkDiv>
+                
                 <LinkDiv>
                 <Link style={{
                 fontSize:"20px"

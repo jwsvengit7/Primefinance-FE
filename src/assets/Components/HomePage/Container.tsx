@@ -24,15 +24,16 @@ import { textfILL } from "./Contents";
             <Banner1 className="image">
                 <BannerImage>
                 <Content>
-                <h1 className='h1'>Making accounting a little</h1>
-                <h1 className='h1 mag-up'>less taxing</h1>
+                <h1 className='h1 mag-up'>We manage the financial health  </h1>
+                <h1  className='h1 mag-up'>of your business while you focus</h1>
+                <h1 className='h1 mag-up'>on increasing your sales </h1>
+                <h1 className='h1 mag-up'>and satisfying your customers.</h1>
                 <Flex>
                 <Button>View Product</Button>
                 <Button>Upload Document</Button>
                 </Flex>
                 </Content>
               
-               
                 </BannerImage>
                 </Banner1>
                 <Banner1 className="image2">

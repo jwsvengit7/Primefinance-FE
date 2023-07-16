@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import bg from '../HomePage/images/bg.jpg'
 
 
 export const View = styled.div`
@@ -17,6 +18,16 @@ align-items:center;
 export const DivContent =styled.div`
 width:40%;
 height:400px;
+`
+
+export const Container =styled.div`
+width:100%;
+height:auto;
+background: #F8F9FA;
+display:flex;
+@media(max-width:700px){
+  flex-direction:column;
+}
 `
 
 export const Headers = styled.header`
@@ -441,4 +452,133 @@ justify-content:space-around;
 img{
     width:20px
 }
+`
+
+
+export const FormDiv =styled.div`
+width:40%;
+height: auto;
+display: flex;
+justify-content: center;
+margin-bottom: 30px;
+@media(max-width:700px){
+    width:100%;
+}
+`
+export const Form =styled.form`
+width:80%;
+height:auto;
+
+font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+color: #252D42;
+`
+export const BackgroundImage = styled.div`
+width:60%;
+height:850px;
+background-image:url(${bg});
+background-size:cover;
+background-repeat:no-repeat;
+background-position: none;
+@media(max-width:600px){
+  display:none
+}
+`
+export const Loader =styled.img`
+width:40px;
+height:40px;
+
+`
+export const Preloader =styled.div`
+width:100%;
+height:100vh;
+position:fixed;
+top:0px;
+left:0px;
+background:rgba(0,0,0,0.5);
+display:flex;
+justify-content:center;
+align-items:center
+`
+export const Fieldset = styled.fieldset`
+margin-bottom:25px;
+height:50px;
+border: 1px solid rgba(37, 45, 66, 0.29);
+border-radius: 4px;
+color:#252D42;
+input{
+  width:100%;
+  height:100%;
+  border:0px;
+  outline:none;
+  font-size:15px;
+  background: #F8F9FA;
+
+}
+select{
+  width:100%;
+  height:100%;
+  border:0px;
+  outline:none;
+  font-size:15px;
+  background: #F8F9FA; 
+}
+
+`
+
+export const ButtonForm =styled.button`
+width: 100%;
+height: 48px;
+outline:none;
+border:0px;
+margin-bottom:30px;
+
+background:#FF5722; 
+
+border-radius: 4px;
+transition-duration:0.5s;
+color:white;
+font-size:17px;
+
+&:hover{
+  background:pink;
+}
+`
+
+export const CenterDiv =styled.div`
+display:flex;
+justify-content:center;
+align-items:center;
+width:100%;
+
+p{
+
+color:#003366;
+a{
+  color:#FF5722;
+  text-decoration:none;
+
+}
+
+}
+`
+
+export const I =styled.div`
+width:95%;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:center;
+color:red
+`
+
+
+
+export const IconDiv =styled.div`
+width:100%;
+height:30px;
+display:flex;
+align-items:center;
+justify-content:center;
+border:1px solid red;
+padding:10px
 `
