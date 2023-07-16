@@ -251,5 +251,4 @@ overflow:scroll
 const Email = styled.div`
 width:100%;
 height:300px;
-background:red
 `
