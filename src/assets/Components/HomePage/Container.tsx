@@ -208,7 +208,11 @@ height:200px;
 background:#ddd;
 display:flex;
 align-items:center;
-justify-content:center
+justify-content:center;
+@media(max-width:600px){
+ display:none
+
+}
 `
 
 const List =styled.div`
@@ -221,11 +225,17 @@ const IconList=styled.div`
 width:10%;
 height:auto;
 display:flex;
-align-items:center
+align-items:center;
+@media(max-width:600px){
+    width:20%
+}
 `
 const Para =styled.div`
 width:90%;
 height:auto;
+@media(max-width:600px){
+    width:80%;
+}
 p{
     font-size: 1rem;
     font-family: Felix;

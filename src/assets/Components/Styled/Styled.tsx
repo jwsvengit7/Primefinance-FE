@@ -80,6 +80,9 @@ padding-bottom:20px;
 border-radius:1000px;
 
 }
+@media(max-width:600px){
+    display:none;
+}
 a:nth-child(2) {
     border-bottom: 2px solid goldenrod;
    
