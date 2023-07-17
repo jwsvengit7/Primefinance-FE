@@ -132,6 +132,10 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 margin-top:20px;
+@media(max-width:600px){
+  margin-top:450px;  
+  flex-direction:column
+}
 `
 export const Content1 =styled.div`
 width:45%;
@@ -146,6 +150,9 @@ a{
     color:#222;
     text-decoration:none;
     color:#003366
+}
+@media(max-width:600px){
+    width:95%
 }
 `
 export const Content2 =styled.div`

@@ -238,7 +238,10 @@ p{
 const Flex = styled.div`
 width:30%;
 display:flex;
-justify-content:space-around
+justify-content:space-around;
+@media(max-width:600px){
+    width:90%;
+}
 `
 
 
