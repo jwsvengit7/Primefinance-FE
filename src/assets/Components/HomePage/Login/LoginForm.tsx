@@ -1,12 +1,14 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
-// import preloader from '../CreateAccount/image/preloader.gif'
-import { Link } from "react-router-dom";
-// import google from './icons/google.svg'
-// import facebook from './icons/facebook.svg'
-import { BackgroundImage, ButtonForm, CenterDiv, Container, Fieldset, Form, FormDiv, I, IconDiv, Loader, Preloader } from "../../Styled/Styled";
+// import preloader from '../../images/preloader.gif'
+// import swal from 'sweatalert';
+import { BackgroundImage, ButtonForm, Container, Fieldset, Form, FormDiv, Loader, Preloader } from "../../Styled/Styled";
+interface Response{
+  success:boolean;
+  message:string;
+  id:string
+}
 
-const PORT = 8999;
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -28,18 +30,32 @@ const LoginForm = () => {
 if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       alert('ALERT Invalid email format');
     }   else {
-      try {
-        setLoading(true);
+        try {
+            setLoading(true);
+            const url = "http://localhost/prime/backend/RestApi/Login.php";
+            await fetch(url, {
+              method: "POST",
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(formData)
+            })
+              .then(response => response.json())
+              .then((data:Response) => {
+                console.log(data);
+                if(!data.success){
+                  alert("error")
 
-      
-
-        
-      } catch (err) {
-        setLoading(false);
-       
-    
-
-      }
+                }else{
+                  localStorage.setItem("email",data.id);
+                  alert("success")
+                  request_meethod("/dashboard")
+               
+                }
+                setLoading(false);
+              });
+          } catch (err) {
+            setLoading(false);
+          }
+          
     }
   };
 
