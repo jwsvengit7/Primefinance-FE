@@ -58,7 +58,10 @@ margin:10px;
 display:flex;
 justify-content:center;
 align-items:center;
-flex-direction:column
+flex-direction:column;
+@media(max-width:600px){
+    width:95%
+}
 `
 
 const ImageDiv =styled.div`

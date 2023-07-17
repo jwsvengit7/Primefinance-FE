@@ -32,8 +32,10 @@ p{
   background-image: url(./assets/Components/HomePage/images/event_1.png);
 }
 .h1{
+  width:60%;
   font-size: 35px;
-  line-height: 1;
+  line-height: 1.5;
+  text-align: center;
 
 }
 .mag-up{
@@ -54,6 +56,10 @@ p{
 @media(max-width:600px){
   .h1{
     font-size: 20px;
+    width:95%
+  }
+  p{
+    font-size: 13px;
   }
   .loaner{
     display:none

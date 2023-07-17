@@ -18,25 +18,25 @@ const Footer =()=>{
                 <Logo />
                 </Div>
                 <LinkDiv>
-            <Link style={{fontSize:"20px"}}>ADDRESS</Link>
-            <Link>Mailing Address:</Link>
-            <Link>24, Allen Avenue,</Link>
-            <Link>Opposite, Oshoppey. Plaza, Ikeja, Lagos</Link>
+            <Link to="/" style={{fontSize:"20px"}}>ADDRESS</Link>
+            <Link to="/" >Mailing Address:</Link>
+            <Link to="/" >24, Allen Avenue,</Link>
+            <Link to="/" >Opposite, Oshoppey. Plaza, Ikeja, Lagos</Link>
        
-            <Link>08034456352,09080777734</Link>
-            <Link>om.adebayo@yahoo.com</Link>
+            <Link to="/" >08034456352,09080777734</Link>
+            <Link to="mail:om.adebayo@yahoo.com" >om.adebayo@yahoo.com</Link>
                 </LinkDiv>
                 
                 <LinkDiv>
-                <Link style={{
+                <Link to="/" style={{
                 fontSize:"20px"
             }}>LINKS</Link>
-            <Link>About Us</Link>
-            <Link>Contact Us</Link>
+            <Link to="/#about">About Us</Link>
+            <Link to="contact">Contact Us</Link>
         
        
-            <Link>Account</Link>
-            <Link>FAQs</Link>
+            <Link to="/login">Account</Link>
+            <Link to="/faq">FAQs</Link>
                 </LinkDiv>
             </FooterLeft>
             <FooterRight>

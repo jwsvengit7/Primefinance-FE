@@ -24,10 +24,7 @@ import { textfILL } from "./Contents";
             <Banner1 className="image">
                 <BannerImage>
                 <Content>
-                <h1 className='h1 mag-up'>We manage the financial health  </h1>
-                <h1  className='h1 mag-up'>of your business while you focus</h1>
-                <h1 className='h1 mag-up'>on increasing your sales </h1>
-                <h1 className='h1 mag-up'>and satisfying your customers.</h1>
+                <h1 className='h1 mag-up'>We manage the financial health of your business while you focus on increasing your sales and satisfying your customers.</h1>
                 <Flex>
                 <Button>View Product</Button>
                 <Button>Upload Document</Button>
@@ -36,10 +33,9 @@ import { textfILL } from "./Contents";
               
                 </BannerImage>
                 </Banner1>
-                <Banner1 className="image2">
+                {/* <Banner1 className="image2">
                 <BannerImage>
-                <h1 className='h1'>Connect to all the event</h1>
-                <h1 className='h1 mag-up'>happening around you</h1>
+                <h1 className='h1'>Connect to all the event happening around you</h1>
                 </BannerImage>
                 </Banner1>
                 <Banner1 className="image1">
@@ -47,7 +43,7 @@ import { textfILL } from "./Contents";
                 <h1 className='h1'>Connect to all the event</h1>
                 <h1 className='h1 mag-up'>happening around you</h1>
                 </BannerImage>
-                </Banner1>
+                </Banner1> */}
 
                 </Banner>
                
@@ -237,7 +233,7 @@ height:auto;
     width:80%;
 }
 p{
-    font-size: 1rem;
+    font-size: 0.7rem;
     font-family: Felix;
     line-height: 19px;
     color: #828282;
@@ -251,6 +247,9 @@ display:flex;
 justify-content:space-around;
 @media(max-width:600px){
     width:90%;
+    button{
+        width:100px
+    }
 }
 `
 
@@ -261,11 +260,14 @@ height:400px;
 overflow:scroll;
 @media(max-width:600px){
     width:100%;
-    display:none
+
 }
 `
 
 const Email = styled.div`
 width:100%;
 height:300px;
+@media(max-width:600px){
+    display:none
+}
 `

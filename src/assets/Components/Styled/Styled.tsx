@@ -67,7 +67,7 @@ export const H1 = styled.h1`
 
 `
 export const Nav =styled.nav`
-width:30%;
+width:40%;
 height:90%;
 display:flex;
 align-items:center;
@@ -191,7 +191,6 @@ flex-direction:column
 export const BannerDiv =styled.div`
 width:100%;
 height:660px;
-overflow-x:scroll;
 @media(max-width:600px){
     height:500px
 }
@@ -199,7 +198,7 @@ overflow-x:scroll;
 `
 
 export const Banner =styled.div`
-width:300%;
+width:100%;
 height:660px;
 display:flex;
 justify-content:center;
@@ -306,7 +305,7 @@ select{
 
     }
     input{
-        width:300px
+        width:90%
     }
 
 `
@@ -379,7 +378,10 @@ margin:30px;
 display:flex;
 flex-direction:column;
 align-items:center;
-text-align:center
+text-align:center;
+@media(max-width:600px){
+    margin:10px
+}
 
 `
 export const ImageDiv =styled.div`
@@ -565,9 +567,7 @@ height: 48px;
 outline:none;
 border:0px;
 margin-bottom:30px;
-
 background:#FF5722; 
-
 border-radius: 4px;
 transition-duration:0.5s;
 color:white;
