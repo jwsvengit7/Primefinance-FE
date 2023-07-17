@@ -130,7 +130,7 @@ import { textfILL } from "./Contents";
             </DivEnter> */}
 
             <MainContent style={{height:"auto"}}>
-            <Content1>
+            <Content1 className="loaner">
                 <Scrol>
                     <ScrollComponent />
                 </Scrol>
@@ -248,7 +248,11 @@ justify-content:space-around;
 const Scrol =styled.div`
 width:80%;
 height:400px;
-overflow:scroll
+overflow:scroll;
+@media(max-width:600px){
+    width:100%;
+    display:none
+}
 `
 
 const Email = styled.div`

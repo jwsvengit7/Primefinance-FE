@@ -115,7 +115,11 @@ export const Award =styled.div`
 width:50%;
 height:auto;
 display:flex;
-justify-content:space-around
+justify-content:space-around;
+@media(max-width:600px){
+    width:100%;
+    flex-direction:column
+  }
 `
 export const MainDiv =styled.main`
 width:100%;
@@ -133,7 +137,7 @@ justify-content:space-between;
 align-items:center;
 margin-top:20px;
 @media(max-width:600px){
-  margin-top:450px;  
+  margin-top:80px;  
   flex-direction:column
 }
 `
@@ -152,7 +156,8 @@ a{
     color:#003366
 }
 @media(max-width:600px){
-    width:95%
+    width:95%;
+    height:auto
 }
 `
 export const Content2 =styled.div`
@@ -183,7 +188,10 @@ flex-direction:column
 export const BannerDiv =styled.div`
 width:100%;
 height:660px;
-overflow:scroll;
+overflow-x:scroll;
+@media(max-width:600px){
+    height:500px
+}
 
 `
 
@@ -193,7 +201,9 @@ height:660px;
 display:flex;
 justify-content:center;
 align-items:center;
-
+@media(max-width:600px){
+    height:500px
+}
 `
 export const DivPad=styled.div`
 width: 90%;
@@ -231,7 +241,6 @@ justify-content:center;
 bottom:80px;
 @media(max-width:600px){
     height:auto;
-    flex-drection:column
 
     }
 `
@@ -248,7 +257,7 @@ align-items:center;
 
 @media(max-width:600px){
     height:300px;
-        flex-drection:column
+    flex-drection:column
 
     }
 `
@@ -272,6 +281,7 @@ input {
     padding-left:16px;
     border:1px solid #222;
 
+
 }
 select{
     height:45px;
@@ -291,6 +301,9 @@ select{
     margin-top:20px;
     margin-bottom:20px;
 
+    }
+    input{
+        width:300px
     }
 
 `
@@ -365,8 +378,6 @@ flex-direction:column;
 align-items:center;
 text-align:center
 
-
-
 `
 export const ImageDiv =styled.div`
 width:50%;
@@ -394,8 +405,11 @@ width:40%;
 height:330px;
 border:1px solid #ccc;
 border-radius:10px;
-padding:20px
-
+padding:20px;
+@media(max-width:600px){
+   width:80% ;
+   margin:10px
+}
 `
 
 export const Splash=styled.div`
