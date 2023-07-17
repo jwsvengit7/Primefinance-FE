@@ -50,8 +50,6 @@ height:100%;
 display:flex;
 position:relative;
 transition-duration:2s;
-align-itemd:center;
-justify-content:center
 
 
 div{

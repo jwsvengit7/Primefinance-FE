@@ -5,6 +5,7 @@ import linkedin from '../HomePage/images/linkedin-icon.svg'
 import twitter from '../HomePage/images/twitter.svg'
 import Logo from "../Header/Logo";
 import { styled } from "styled-components";
+import { FaFacebookF } from 'react-icons/fa'
 const Footer =()=>{
     return ( 
 
@@ -17,9 +18,7 @@ const Footer =()=>{
                 <Logo />
                 </Div>
                 <LinkDiv>
-            <Link style={{
-                fontSize:"20px"
-            }}>ADDRESS</Link>
+            <Link style={{fontSize:"20px"}}>ADDRESS</Link>
             <Link>Mailing Address:</Link>
             <Link>24, Allen Avenue,</Link>
             <Link>Opposite, Oshoppey. Plaza, Ikeja, Lagos</Link>
@@ -41,10 +40,10 @@ const Footer =()=>{
                 </LinkDiv>
             </FooterLeft>
             <FooterRight>
-            <img src={instagram} alt="" width={50} />
-            <img src={linkedin} alt="" width={50} />
-            <img src={instagram} alt="" width={50} />
-            <img src={twitter} alt="" width={50} />
+            <Link to="https://instagram.com/blessed_tosin?igshid=MzNlNGNkZWQ4Mg=="><img src={instagram} alt="" width={50} /></Link>
+            <Link to="https://www.linkedin.com/in/oluwatosinadebayo" ><img src={linkedin} alt="" width={50} /></Link>
+            <Link to=""><FaFacebookF /></Link>
+            <Link to=""><img src={twitter} alt="" width={50} /></Link>
 
             </FooterRight>
 
@@ -71,7 +70,11 @@ display:flex;
 flex-direction:column;
 margin:10px;
 a:nth-child(1){
-    font-weight:bold
+    font-weight:bold;
+}
+@media(max-width:600px){
+    width:100%;
+    flex-direction:column
 }
 
 `

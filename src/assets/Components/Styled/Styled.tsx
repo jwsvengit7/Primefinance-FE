@@ -453,6 +453,9 @@ height:auto;
 display:flex;
 align-items:center;
 border-top:1px solid #ccc;
+@media(max-width:600px){
+    flex-direction:column;
+}
 
 `
 
@@ -465,7 +468,11 @@ a{
     margin:10px;
     color:#222;
     font-size:13px;
-    text-decoration:none
+    text-decoration:none;
+}
+@media(max-width:600px){
+    width:100%;
+    flex-direction:column
 }
 `
 export const FooterRight =styled.div`
@@ -474,7 +481,10 @@ height:100px;
 display:flex;
 justify-content:space-around;
 img{
-    width:20px
+    width:20px;
+}
+@media(max-width:600px){
+    width:50%
 }
 `
 
