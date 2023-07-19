@@ -616,3 +616,9 @@ justify-content:center;
 border:1px solid red;
 padding:10px
 `
+export const TextArea =styled.textarea`
+width:90%;
+padding:10px;
+border:0px;
+height:500px
+`
