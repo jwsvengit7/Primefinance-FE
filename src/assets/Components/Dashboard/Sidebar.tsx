@@ -19,7 +19,7 @@ const Sidebar=()=>{
             </SideContent>
             <SideContent>
                 <FaList />
-                <Link to="/">Posts</Link>
+                <Link to="/view">Posts</Link>
             </SideContent>
             <SideContent>
                 <FaList />

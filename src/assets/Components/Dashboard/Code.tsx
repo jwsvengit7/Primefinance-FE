@@ -4,17 +4,34 @@ import { EvnetsBody, Fieldset, ButtonForm,TextArea } from '../Styled/Styled'
 import { FaDatabase, FaFileSignature, FaTachometerAlt } from "react-icons/fa";
 import { LuUpload } from 'react-icons/lu'
 import { useState } from "react";
-import $ from "jquery";
+
+
 
 interface Response {
   success: boolean;
   message: string;
-  id: string;
 }
 
 const Code = () => {
   const [image, setImage] = useState<File | null>(null);
-  const [imageUrl, setImageUrl] = useState("");
+  const [imageUrl, setImageUrl] = useState<string>("");
+  const [loading, setLoading] = useState(false);
+  const [formdata, setFormData] = useState({
+    description: "",
+    caption: "",
+    title:"",
+    organizer:"",
+    category:"",
+    location:""
+  });
+
+  const handeChange = (event:any) => {
+    const { name, value } = event.target;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: value
+    }));
+  };
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
@@ -25,39 +42,41 @@ const Code = () => {
     }
   };
 
-  const handle = (e: React.FormEvent<HTMLFormElement>) => {
+  const handle =  (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const url = "http://localhost/prime/backend/RestApi/CreatePost.php";
-    const formData = new FormData(e.currentTarget);
-    if (image) {
-      formData.append("file", image);
-    }
+    try {
+      setLoading(true);
+      alert("m")
+    
+       fetch(url, {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formdata)
+      })
+        .then(response => response.json())
+        .then((data:Response) => {
+          console.log(data);
+          if(!data.success){
+            alert("error")
 
-    $.ajax({
-      url: url,
-      type: "POST",
-      data: formData,
-      processData: false,
-      contentType: false,
-      cache: false,
-      beforeSend: (data: any) => {
-        console.log(data);
-        // Code to execute before sending the request
-      },
-      success: (data: Response) => {
-        console.log(data);
-        if (!data.success) {
-          alert("error");
-        } else {
-          alert("success");
-        }
-      },
-      error: (xhr: any, status: any, error: any) => {
-        console.error(xhr, status, error);
-        alert("An error occurred. Please try again.");
-      },
-    });
-  };
+          }else{
+            console.log(data)
+            
+            alert("success")
+           
+         
+          }
+          setLoading(false);
+        });
+    } catch (err) {
+      setLoading(false);
+    }
+    
+}
+
+   
+
     return (
         <Main>
         <Sidebar />
@@ -78,8 +97,10 @@ const Code = () => {
                 <input
                   type="text"
                   name="title"
+                  onChange={handeChange}
+                  value={formdata.title}
                
-                  required
+                  
                 />
               </Fieldset>
 
@@ -88,8 +109,8 @@ const Code = () => {
                 <input
                   type="text"
                   name="caption"
-                
-                  required
+                  onChange={handeChange}
+                  value={formdata.caption}
                 />
                 </Fieldset>
                 <Fieldset style={{height:"auto"}}>
@@ -97,7 +118,8 @@ const Code = () => {
                 <input
                   type="text"
                   name="description"
-                  required
+                  onChange={handeChange}
+                  value={formdata.description}
                 />
                 <TextArea  
                 // onChange={handleChange} name="description" value={formdata.description}
@@ -111,6 +133,8 @@ const Code = () => {
                 <input
                   type="text"
                   name="organizer"
+                  onChange={handeChange}
+                  value={formdata.organizer}
                 />
               </Fieldset>
               <div style={{width:"100%",display:"flex",justifyContent:"space-between"}}>
@@ -126,6 +150,24 @@ const Code = () => {
                 <input
                   type="text"
                   name="category"
+                  onChange={handeChange}
+                  value={formdata.category}
+                  
+                 
+                />
+
+            
+              </Fieldset>
+              <Fieldset style={{width:"45%"}} 
+              // onChange={handleChange}
+              >
+                <legend>Location</legend>
+                <input
+                  type="text"
+                  name="location"
+                  onChange={handeChange}
+                  value={formdata.location}
+                  
                  
                 />
 
