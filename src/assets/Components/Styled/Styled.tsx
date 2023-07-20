@@ -67,11 +67,11 @@ export const H1 = styled.h1`
 
 `
 export const Nav =styled.nav`
-width:40%;
+width:60%;
 height:90%;
 display:flex;
 align-items:center;
-justify-content:space-between;
+justify-content:space-around;
 a{
 text-decoration:none;
 font-family:sans-serif;

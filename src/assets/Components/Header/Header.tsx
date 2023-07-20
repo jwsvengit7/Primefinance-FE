@@ -62,7 +62,7 @@ function Header(props:NavIn){
                     {navbar[2]}
                     </Link>
                     <Link to="/login">
-                   {navbar[3]}
+                    Login
                     </Link>
 
                     <img style={{
