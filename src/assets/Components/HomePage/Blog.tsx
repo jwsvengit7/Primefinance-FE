@@ -13,6 +13,7 @@ interface BlogPost {
     organizer: string;
     title: string;
     image: string;
+    date:string
   }
   
   interface Post {
@@ -32,7 +33,10 @@ interface BlogPost {
         console.log(e);
       });
   
-
+      const dateString = "2023-07-20 12:45:41.764975";
+      const dateObj = new Date(dateString);
+      
+      console.log(dateObj);
 
     return (
         <>
@@ -41,20 +45,37 @@ interface BlogPost {
         <UpcomingEvents>
     <h1>OUR BLOG</h1>
     <MainContent style={{ flexWrap: "wrap", justifyContent: "flex-start" }}>
-    {datas.data.length < 1 ? <h1>No Blog Available</h1> : datas.data.map((val: BlogPost, i: number) => (
-            <Box key={i}>
-                <h1>{val.category}</h1>
-                <ImageDiv>
-                    <img src={val.image} alt='' />
-                    <h3>Heading headf djfj</h3>
-                    <p style={{ margin: "10px" }}>{val.description}</p>
-                    <p>Read More</p>
-                    <hr />
-                    <p>December 4, 2021</p>
-                </ImageDiv>
-            </Box>
-        ))}
-    </MainContent>
+  {datas.data.length < 1 ? (
+    <h1>No Blog Available</h1>
+  ) : (
+    datas.data.map((val:BlogPost,i:number)=>{
+      
+      const dateObj = new Date("2023-07-20 12:45:41.764975"); // Create a Date object from val.date
+
+      // Get the time (hours, minutes, seconds)
+      const hours = dateObj.getHours();
+      const minutes = dateObj.getMinutes();
+      const seconds = dateObj.getSeconds();
+
+      return (
+        <Box key={i}>
+          <h1>{val.category}</h1>
+          <ImageDiv>
+            <img src={val.image} alt="" />
+            <h3>Heading headf djfj</h3>
+            <p style={{ margin: "10px" }}>{val.description}</p>
+            <p>Read More</p>
+            <hr />
+            <p>
+              {dateObj.toDateString()} | Time: {hours}:{minutes}:{seconds}
+            </p>
+          </ImageDiv>
+        </Box>
+      );
+    })
+  )}
+</MainContent>;
+
 </UpcomingEvents>    
          
         <Footer />

@@ -73,7 +73,8 @@ function Header(props:NavIn){
                 </Mobile>
                
             </LogoDiv>
-            {(props.navbar.length>0) ? <NavBar items={props.navbar} /> :""}
+            {(props.navbar.length>0) ? <NavBar items={props.navbar} /> : ""}
+            
         </PerfectLine>
         </Headers>
         </>

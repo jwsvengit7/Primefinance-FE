@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useState } from "react";
 // import preloader from '../../images/preloader.gif'
-// import swal from 'sweatalert';
+ import swal from 'sweetalert';
 import { BackgroundImage, ButtonForm, Container, Fieldset, Form, FormDiv, Loader, Preloader } from "../../Styled/Styled";
 interface Response{
   success:boolean;
@@ -28,7 +28,7 @@ const LoginForm = () => {
     event.preventDefault();
 
 if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-      alert('ALERT Invalid email format');
+  swal("ALERT",'ALERT Invalid email format','error');
     }   else {
         try {
             setLoading(true);
@@ -42,18 +42,20 @@ if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
               .then((data:Response) => {
                 console.log(data);
                 if(!data.success){
-                  alert("error")
+                  swal("ALERT!","Try Again","error")
 
                 }else{
                   localStorage.setItem("email",data.id);
-                  alert("success")
+                  swal("ALERT",'Successful Login','success');
                   request_meethod("/dashboard")
                
                 }
                 setLoading(false);
+
               });
           } catch (err) {
             setLoading(false);
+            swal("ALERT!","Try Again","error")
           }
           
     }
@@ -101,11 +103,7 @@ if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
                   name="password"
                 />
               </Fieldset>
-           
-
-            <ButtonForm>
-              Login
-            </ButtonForm>
+            <ButtonForm>Login</ButtonForm>
            
           </Form>
         </FormDiv>
