@@ -7,7 +7,7 @@
 }
 body{
 
-  font-family: 'Open Sans';
+  font-family: 'Open Sans' !important;
   color:#232;
   margin:0px
 }
