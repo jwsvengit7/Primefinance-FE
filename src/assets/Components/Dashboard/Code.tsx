@@ -4,6 +4,8 @@ import { EvnetsBody, Fieldset, ButtonForm,TextArea } from '../Styled/Styled'
 import { FaDatabase, FaFileSignature, FaTachometerAlt } from "react-icons/fa";
 import { LuUpload } from 'react-icons/lu'
 import { useState } from "react";
+import { Cloudinary } from '@cloudinary/url-gen';
+import { Cloudinary as CloudinaryCore } from 'cloudinary-core';
 
 
 
@@ -13,7 +15,9 @@ interface Response {
 }
 
 const Code = () => {
-  const [image, setImage] = useState<File | null>(null);
+  const cld = new Cloudinary({ cloud: { cloudName: 'dknryxg72' } });
+  const [image, setImage] = useState(null);
+  const [imageType, setType] = useState<string>("");
   const [imageUrl, setImageUrl] = useState<string>("");
   const [loading, setLoading] = useState(false);
   const [formdata, setFormData] = useState({
@@ -22,7 +26,8 @@ const Code = () => {
     title:"",
     organizer:"",
     category:"",
-    location:""
+    location:"",
+    
   });
 
   const handeChange = (event:any) => {
@@ -33,18 +38,52 @@ const Code = () => {
     }));
   };
 
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleFileChange =  (e: React.ChangeEvent<HTMLInputElement>) => {
     const selectedFile = e.target.files?.[0];
+    setImage(selectedFile);
     if (selectedFile) {
-      setImage(selectedFile);
-      const objectUrl = URL.createObjectURL(selectedFile);
+      console.log(image)
+      console.log(image.name);
+      setType(image.name);
+      const objectUrl:string = URL.createObjectURL(selectedFile);
       setImageUrl(objectUrl);
     }
-  };
+    const formData:FormData = new FormData();
+    formData.append('file', image);
+    const uploadPreset = 'image_div';
+    try {
+      const res =  fetch(
+        `https://res.cloudinary.com/jwsven/image/upload/image_div/`,
+        {
+          method: 'POST',
+          body: formData,
+          headers : {
+            'X-Requested-With': 'XMLHttpRequest',
+          }
+
+        }
+      );
+      if (res.ok) {
+        const data =  res.json();
+        console.log('Image uploaded:', data.secure_url);
+      } else {
+        console.error('Image upload failed:', res);
+      }
+    } catch (error) {
+      console.error('Error uploading image:', error);
+    }
+
+  }
+
+
+
+
+
+  
 
   const handle =  (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const url = "http://localhost/prime/backend/RestApi/CreatePost.php";
+    const url = "https://voucherasset.ng/Tprime/Prime/Backend/RestApi/CreatePost.php";
     try {
       setLoading(true);
       alert("m")
@@ -62,6 +101,7 @@ const Code = () => {
 
           }else{
             console.log(data)
+          
             
             alert("success")
            
@@ -79,6 +119,7 @@ const Code = () => {
 
     return (
         <Main>
+      
         <Sidebar />
         <Codes>
         <EvnetsBody>
@@ -228,6 +269,12 @@ display:flex;
 const Codes = styled.div`
 width:80%;
 height:auto;
+@media(max-width:600px){
+    top:100px;
+    position:relative;
+    width:95%;
+    padding-left:20px
+}
 `
 
 const EventCreation =styled.form`

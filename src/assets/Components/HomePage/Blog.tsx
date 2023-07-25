@@ -4,6 +4,7 @@ import Header from "../Header/Header"
 import { MainContent, UpcomingEvents } from "../Styled/Styled"
 import { navbar ,arr} from "./Contents"
 import { useState } from "react"
+import {Link} from 'react-router-dom'
 interface BlogPost {
     id: number;
     post: string;
@@ -23,7 +24,7 @@ interface BlogPost {
   const Blog = () => {
     const [datas, setData] = useState<Post>({ data: [] }); // Initialize datas as an object with an empty data array.
   
-    fetch("http://localhost/prime/backend/RestApi/viewPost.php")
+    fetch("https://voucherasset.ng/Tprime/Prime/Backend/RestApi/Login.php/viewPost.php")
       .then((response) => response.json())
       .then((data: Post) => {
         console.log(data);
@@ -61,7 +62,8 @@ interface BlogPost {
         <Box key={i}>
           <h1>{val.category}</h1>
           <ImageDiv>
-            <img src={val.image} alt="" />
+            <Link to="/view/{val.id}" >
+            <img src={val.image} alt=""  /></Link>
             <h3>Heading headf djfj</h3>
             <p style={{ margin: "10px" }}>{val.description}</p>
             <p>Read More</p>

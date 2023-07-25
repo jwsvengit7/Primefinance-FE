@@ -13,10 +13,7 @@ const Sidebar=()=>{
                 <FaHome />
                 <Link to="/">Home</Link>
             </SideContent>
-            <SideContent>
-                <FaRegMap />
-                <Link to="/">Tools</Link>
-            </SideContent>
+
             <SideContent>
                 <FaList />
                 <Link to="/view">Posts</Link>
@@ -27,12 +24,9 @@ const Sidebar=()=>{
             </SideContent>
             <SideContent>
                 <FaList />
-                <Link to="/">Delete Post</Link>
+                <Link to="/">Delete</Link>
             </SideContent>
-            <SideContent>
-                <FaGrinHearts />
-                <Link to="/">Setting</Link>
-            </SideContent>
+      
 
         </Side>
 
@@ -45,12 +39,20 @@ export default Sidebar;
 
 const Side =styled.div`
 width:20%;
-heoght:1200px;
+height:1200px;
 background:white;
 box-shadow: 0px 4px 8px 0px rgba(0, 0, 0, 0.04);
 flex-direction:column;
 display:flex;
-align-items:center
+align-items:center;
+@media(max-width:600px){
+  position:absolute;
+  top:100px;
+  width:100%;
+  left:0px;
+  flex-direction:row;
+  height:100px;
+}
 `
 const SideContent = styled.div`
 width:80%;
@@ -59,11 +61,17 @@ display:flex;
 align-items:center;
 font-size:30px;
 color:#003366;
-
+@media(max-width:600px){
+ font-size:15px;  
+ a{
+    font-size:10px;
+ } 
+}
 a{
     color:#003366;
-    padding-left:20px;
-    font-size:20px;
+    padding-left:10px;
+    font-size:15px;
     text-decoration:none;
 }
+
 `

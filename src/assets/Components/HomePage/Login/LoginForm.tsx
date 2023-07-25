@@ -32,7 +32,7 @@ if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
     }   else {
         try {
             setLoading(true);
-            const url = "http://localhost/prime/backend/RestApi/Login.php";
+            const url = "https://voucherasset.ng/Tprime/Prime/Backend/RestApi/Login.php";
             await fetch(url, {
               method: "POST",
               headers: { 'Content-Type': 'application/json' },
