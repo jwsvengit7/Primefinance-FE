@@ -5,6 +5,9 @@
   will-change: filter;
   transition: filter 300ms;
 }
+h1{
+  font-family: 'Open Sans' !important;
+}
 body{
 
   font-family: 'Open Sans' !important;
