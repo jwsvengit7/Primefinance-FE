@@ -13,7 +13,7 @@ body{
 }
 a{
 
-  font-family: 'Open Sans';
+  font-family: 'Open Sans'  !important;
 }
 p{
   font-size: 1rem;
